@@ -40,7 +40,7 @@ Include Chart.js and chartjs-plugin-colorschemes.js to your page, and specify a 
     }
 ```
 
-Every color scheme has a number at the end of its name, which is the number of that colors included in the scheme. If the number of the datasets is larger than it, the same colors will appear repeatedly. A color is not modified if it is specified manually.
+Every color scheme has a number at the end of its name, which indicates the number of that colors included in the scheme. If the number of the datasets is larger than it, the same colors will appear repeatedly. A color is not modified if it is specified by dataset options.
 
 ## Tutorial
 
