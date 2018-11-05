@@ -24,6 +24,10 @@
     <section id="tutorial" class="tutorial">
       <h2>Predefined color schemes for <a href="https://www.chartjs.org">Chart.js</a>.<br />Pick the perfect color combination for your data visualization.</h2>
 
+      <div style="width: 550px; margin-left: auto; margin-right: auto">
+        <canvas id="chart1"></canvas>
+      </div>
+
       <ul id="plain-js" class="tutorial-list wrapper active">
 
         <li>
@@ -96,12 +100,12 @@
           <ul style="margin-bottom:-60px">
             <li>
               <div style="width:489px">
-                <canvas id="chart1"></canvas>
+                <canvas id="chart2"></canvas>
               </div>
             </li>
             <li>
               <div style="width:489px; background-color:black; border-radius: 0 0 4px; position:absolute; right:0; bottom:0">
-                <canvas id="chart2"></canvas>
+                <canvas id="chart3"></canvas>
               </div>
             </li>
           </ul>
@@ -119,6 +123,63 @@
 
     </section>
     <script>
+      var ctx1 = document.getElementById('chart1').getContext('2d');
+      var chart1 = new Chart(ctx1, {
+        type: 'bar',
+        data: {
+          labels: Chart.colorschemes.brewer['Paired12'],
+          datasets: [{
+            data: Chart.colorschemes.brewer['Paired12'].map(function() {
+              return Math.random() + 1;
+            }),
+            backgroundColor: Chart.colorschemes.brewer['Paired12']
+          }]
+        },
+        options: {
+          aspectRatio: 4,
+          elements: {
+            rectangle: {
+              borderWidth: 1
+            }
+          },
+          legend: {
+            display: false
+          },
+          tooltips: {
+            enabled: false
+          },
+          hover: {
+            mode: null
+          },
+          scales: {
+            xAxes: [{
+              display: false
+            }],
+            yAxes: [{
+              display: false,
+              ticks: {
+                min: 0,
+                max: 2.5
+              }
+            }]
+          }
+        }
+      });
+
+      var count = 0;
+
+      setInterval(function() {
+        var scheme = ['Paired12', 'YlGnBu9', 'PiYG11', 'RdPu9', 'Spectral11', 'Oranges9', 'BrBG11'][++count % 7];
+        var colors = Chart.colorschemes.brewer[scheme];
+
+        chart1.data.labels = colors;
+        chart1.data.datasets[0].data = colors.map(function() {
+          return Math.random() + 1;
+        });
+        chart1.data.datasets[0].backgroundColor = colors;
+        chart1.update();
+      }, 3000);
+
       var data = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [1, 2, 3].map(function(i) {
@@ -135,8 +196,8 @@
         }
       };
 
-      var ctx1 = document.getElementById('chart1').getContext('2d');
-      var chart1 = new Chart(ctx1, {
+      var ctx2 = document.getElementById('chart2').getContext('2d');
+      var chart2 = new Chart(ctx2, {
         type: 'line',
         data: data,
         options: {
@@ -148,8 +209,8 @@
         }
       });
 
-      var ctx2 = document.getElementById('chart2').getContext('2d');
-      var chart2 = new Chart(ctx2, {
+      var ctx3 = document.getElementById('chart3').getContext('2d');
+      var chart3 = new Chart(ctx3, {
         type: 'line',
         data: data,
         options: {
@@ -206,10 +267,10 @@
       document.getElementById('scheme').addEventListener('change', function(event) {
         var scheme = event.target.value;
 
-        chart1.options.plugins.colorschemes.scheme = scheme;
         chart2.options.plugins.colorschemes.scheme = scheme;
-        chart1.update();
+        chart3.options.plugins.colorschemes.scheme = scheme;
         chart2.update();
+        chart3.update();
         document.getElementById('scheme-text').innerHTML = scheme;
       });
 
@@ -229,8 +290,8 @@
             fill: false
           });
         }
-        chart1.update();
         chart2.update();
+        chart3.update();
       });
     </script>
     <footer class="page-footer">
