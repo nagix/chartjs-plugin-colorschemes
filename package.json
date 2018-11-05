@@ -1,0 +1,45 @@
+{
+  "name": "chartjs-plugin-colorschemes",
+  "version": "0.1.0",
+  "description": "Predefined color schemes for Chart.js",
+  "main": "dist/chartjs-plugin-colorschemes.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "dependencies": {
+    "chart.js": "^2.5.0"
+  },
+  "devDependencies": {
+    "eslint-config-chartjs": "^0.1.0",
+    "gulp": "3.9.x",
+    "gulp-eslint": "^4.0.0",
+    "gulp-file": "^0.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "~3.0.x",
+    "gulp-zip": "~4.0.0",
+    "merge-stream": "^1.0.1",
+    "rollup-stream": "^1.24.1",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nagix/chartjs-plugin-colorschemes.git"
+  },
+  "keywords": [
+    "chart.js",
+    "plugin",
+    "color",
+    "scheme",
+    "palette",
+    "brewer"
+  ],
+  "author": "Akihiko Kusanagi <nagi@nagi-p.com> (https://nagix.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nagix/chartjs-plugin-colorschemes/issues"
+  },
+  "homepage": "https://nagix.github.io/chartjs-plugin-colorschemes"
+}
