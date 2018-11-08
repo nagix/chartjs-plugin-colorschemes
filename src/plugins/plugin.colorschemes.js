@@ -6,7 +6,8 @@ import colorschemes from '../colorschemes/index';
 var helpers = Chart.helpers;
 
 Chart.defaults.global.plugins.colorschemes = {
-	scheme: 'brewer.Paired12'
+	scheme: 'brewer.Paired12',
+	fillAlpha: 0.5
 };
 
 export default {
@@ -32,7 +33,7 @@ export default {
 					case 'line':
 					case 'radar':
 						if (typeof dataset.backgroundColor === 'undefined') {
-							dataset.backgroundColor = helpers.color(color).alpha(0.5).rgbString();
+							dataset.backgroundColor = helpers.color(color).alpha(options.fillAlpha).rgbString();
 							dataset.colorschemes.backgroundColor = true;
 						}
 						if (typeof dataset.borderColor === 'undefined') {
@@ -40,7 +41,7 @@ export default {
 							dataset.colorschemes.borderColor = true;
 						}
 						if (typeof dataset.pointBackgroundColor === 'undefined') {
-							dataset.pointBackgroundColor = helpers.color(color).alpha(0.5).rgbString();
+							dataset.pointBackgroundColor = helpers.color(color).alpha(options.fillAlpha).rgbString();
 							dataset.colorschemes.pointBackgroundColor = true;
 						}
 						if (typeof dataset.pointBorderColor === 'undefined') {
