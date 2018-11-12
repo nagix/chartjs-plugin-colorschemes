@@ -24,6 +24,12 @@ To install via bower:
 bower install chartjs-plugin-colorschemes --save
 ```
 
+Use unpkg CDN:
+
+```html
+<script src="https://unpkg.com/chartjs-plugin-colorschemes@latest/dist/chartjs-plugin-colorschemes.min.js"></script>
+```
+
 ## Usage
 
 chartjs-plugin-colorschemes can be used with ES6 modules, plain JavaScript and module loaders.
