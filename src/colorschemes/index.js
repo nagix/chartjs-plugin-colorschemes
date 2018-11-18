@@ -1,7 +1,9 @@
 'use strict';
 
 import brewer from './colorschemes.brewer';
+import tableau from './colorschemes.tableau';
 
 export default {
-	brewer: brewer
+	brewer: brewer,
+	tableau: tableau
 };
