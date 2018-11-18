@@ -195,6 +195,17 @@
           scheme: 'brewer.Paired12'
         }
       };
+      var generateLabels = function(chart) {
+        return chart.data.datasets.map(function(dataset, i) {
+          return {
+            text: dataset.label,
+            hidden: !chart.isDatasetVisible(i),
+            strokeStyle: dataset.borderColor,
+            pointStyle: 'line',
+            datasetIndex: i
+          };
+        });
+      };
 
       var ctx2 = document.getElementById('chart2').getContext('2d');
       var chart2 = new Chart(ctx2, {
@@ -204,6 +215,12 @@
           aspectRatio: 1.75,
           layout: {
             padding: 14
+          },
+          legend: {
+            labels: {
+              generateLabels: generateLabels,
+              usePointStyle: true
+            }
           },
           plugins: plugginOpts
         }
@@ -220,7 +237,9 @@
           },
           legend: {
             labels: {
-              fontColor: '#ccc'
+              fontColor: '#ccc',
+              generateLabels: generateLabels,
+              usePointStyle: true
             }
           },
           tooltips: {
