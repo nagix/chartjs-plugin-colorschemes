@@ -29,9 +29,10 @@ export default {
 					dataset.colorschemes = {};
 
 					switch (dataset.type || chart.config.type) {
-					// For line and radar chart, borderColor and backgroundColor (50% transparent) are set
+					// For line, radar and scatter chart, borderColor and backgroundColor (50% transparent) are set
 					case 'line':
 					case 'radar':
+					case 'scatter':
 						if (typeof dataset.backgroundColor === 'undefined') {
 							dataset.backgroundColor = helpers.color(color).alpha(options.fillAlpha).rgbString();
 							dataset.colorschemes.backgroundColor = true;
