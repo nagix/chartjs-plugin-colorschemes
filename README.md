@@ -4,7 +4,7 @@
 
 *Predefined color schemes for [Chart.js](https://www.chartjs.org)*
 
-You can pick the perfect color combination for your charts from the predefined color schemes, which are based on [ColorBrewer](http://colorbrewer2.org).
+You can pick the perfect color combination for your charts from the predefined color schemes, which are based on popular tools such as [ColorBrewer](http://colorbrewer2.org) and [Tableau](https://www.tableau.com).
 
 This plugin requires Chart.js 2.5.0 or later.
 
@@ -24,8 +24,11 @@ To install via bower:
 bower install chartjs-plugin-colorschemes --save
 ```
 
-Use unpkg CDN:
+To use CDN:
 
+```html
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-colorschemes@latest/dist/chartjs-plugin-colorschemes.min.js"></script>
+```
 ```html
 <script src="https://unpkg.com/chartjs-plugin-colorschemes@latest/dist/chartjs-plugin-colorschemes.min.js"></script>
 ```
@@ -63,6 +66,7 @@ All available options are listed below.
 
 | Name | Type | Default | Description
 | ---- | ---- | ------- | -----------
+| `fillAlpha` | `Number` | `0.5` | The transparency value for the line fill color. Must be a number between `0.0` (fully transparent) and `1.0` (no transparency).
 | `scheme` | `String` | `'brewer.Paired12'` | Color scheme name that is any of [Color Chart](https://nagix.github.io/chartjs-plugin-colorschemes/colorchart.html).
 
 ## Building

@@ -1,6 +1,6 @@
 {
   "name": "chartjs-plugin-colorschemes",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Predefined color schemes for Chart.js",
   "main": "dist/chartjs-plugin-colorschemes.js",
   "directories": {
