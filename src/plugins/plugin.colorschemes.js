@@ -10,7 +10,8 @@ var hoverReset = Chart.DatasetController.prototype.removeHoverStyle.length === 2
 
 Chart.defaults.global.plugins.colorschemes = {
 	scheme: 'brewer.Paired12',
-	fillAlpha: 0.5
+	fillAlpha: 0.5,
+	reverse: false
 };
 
 export default {
@@ -19,14 +20,16 @@ export default {
 	beforeUpdate: function(chart, options) {
 		var s = options.scheme.split('.');
 		var category = colorschemes[s[0]];
-		var scheme, color;
+		var scheme, length, colorIndex, color;
 
 		if (category) {
 			scheme = category[s[1]];
+			length = scheme.length;
 			if (scheme) {
 				// Set scheme colors
 				chart.config.data.datasets.forEach(function(dataset, datasetIndex) {
-					color = scheme[datasetIndex % scheme.length];
+					colorIndex = datasetIndex % length;
+					color = scheme[options.reverse ? length - colorIndex - 1 : colorIndex];
 
 					// Object to store which color option is set
 					dataset.colorschemes = {};
@@ -58,7 +61,8 @@ export default {
 					case 'pie':
 						if (typeof dataset.backgroundColor === 'undefined') {
 							dataset.backgroundColor = dataset.data.map(function(data, dataIndex) {
-								return scheme[dataIndex % scheme.length];
+								colorIndex = dataIndex % length;
+								return scheme[options.reverse ? length - colorIndex - 1 : colorIndex];
 							});
 							dataset.colorschemes.backgroundColor = true;
 						}
