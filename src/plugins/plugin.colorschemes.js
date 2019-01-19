@@ -5,6 +5,9 @@ import colorschemes from '../colorschemes/index';
 
 var helpers = Chart.helpers;
 
+// Element models are always reset when hovering in Chart.js 2.7.2 or earlier
+var hoverReset = Chart.DatasetController.prototype.removeHoverStyle.length === 2;
+
 Chart.defaults.global.plugins.colorschemes = {
 	scheme: 'brewer.Paired12',
 	fillAlpha: 0.5
@@ -93,5 +96,18 @@ export default {
 				delete dataset.colorschemes;
 			}
 		});
+	},
+
+	beforeEvent: function(chart, event, options) {
+		if (hoverReset) {
+			this.beforeUpdate(chart, options);
+		}
+		return true;
+	},
+
+	afterEvent: function(chart) {
+		if (hoverReset) {
+			this.afterUpdate(chart);
+		}
 	}
 };
