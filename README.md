@@ -4,7 +4,7 @@
 
 *Predefined color schemes for [Chart.js](https://www.chartjs.org)*
 
-You can pick the perfect color combination for your charts from the predefined color schemes, which are based on popular tools such as [ColorBrewer](http://colorbrewer2.org) and [Tableau](https://www.tableau.com).
+You can pick the perfect color combination for your charts from the predefined color schemes, which are based on popular tools such as [ColorBrewer](http://colorbrewer2.org), [Microsoft Office](https://products.office.com) and [Tableau](https://www.tableau.com).
 
 This plugin requires Chart.js 2.5.0 or later.
 
@@ -39,7 +39,7 @@ chartjs-plugin-colorschemes can be used with ES6 modules, plain JavaScript and m
 
 Include Chart.js and chartjs-plugin-colorschemes.js to your page, and specify a color scheme as shown in the example below. You can pick a scheme from [Color Chart](https://nagix.github.io/chartjs-plugin-colorschemes/colorchart.html).
 
-```javascript
+```js
     options: {
     	plugins: {
             colorschemes: {
@@ -50,6 +50,14 @@ Include Chart.js and chartjs-plugin-colorschemes.js to your page, and specify a 
 ```
 
 Every color scheme has a number at the end of its name, which indicates the number of that colors included in the scheme. If the number of the datasets is larger than it, the same colors will appear repeatedly. A color is not modified if it is specified by dataset options.
+
+### Usage in ES6 as module
+
+Nothing else than importing the module should be enough.
+
+```js
+import 'chartjs-plugin-colorschemes';
+```
 
 ## Tutorial
 
@@ -68,6 +76,7 @@ All available options are listed below.
 | ---- | ---- | ------- | -----------
 | `fillAlpha` | `Number` | `0.5` | The transparency value for the line fill color. Must be a number between `0.0` (fully transparent) and `1.0` (no transparency).
 | `scheme` | `String` | `'brewer.Paired12'` | Color scheme name that is any of [Color Chart](https://nagix.github.io/chartjs-plugin-colorschemes/colorchart.html).
+| `reverse` | `Boolean` | `false` | If set to `true`, the order of the colors in the selected  scheme is reversed.
 
 ## Building
 
