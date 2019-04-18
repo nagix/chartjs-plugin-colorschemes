@@ -20,11 +20,25 @@ export default {
 	beforeUpdate: function(chart, options) {
 		var s = options.scheme.split('.');
 		var category = colorschemes[s[0]];
-		var scheme, length, colorIndex, color;
+		var scheme, length, colorIndex, color, colorFunctionResult;
 
 		if (category) {
 			scheme = category[s[1]];
+
+			if (options.colorFunction) {
+				// Execute own color function
+				colorFunctionResult = options.colorFunction();
+
+				if (colorFunctionResult instanceof Array) {
+					if (scheme) {
+						// Add own colors to the predifined scheme
+						Array.prototype.push.apply(scheme, colorFunctionResult);
+					}
+				}
+			}
+
 			length = scheme.length;
+
 			if (scheme) {
 				// Set scheme colors
 				chart.config.data.datasets.forEach(function(dataset, datasetIndex) {
