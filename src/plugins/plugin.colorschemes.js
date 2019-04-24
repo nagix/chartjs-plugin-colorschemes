@@ -20,30 +20,32 @@ export default {
 	beforeUpdate: function(chart, options) {
 		var s = options.scheme.split('.');
 		var category = colorschemes[s[0]];
-		var scheme, length, colorIndex, color, colorFunctionResult;
+		var scheme, schemeClone, length, colorIndex, color;
 
 		if (category) {
 			scheme = category[s[1]];
 
-			if (options.colorFunction) {
-				// Execute own color function
-				colorFunctionResult = options.colorFunction();
+			if (scheme) {
 
-				if (colorFunctionResult instanceof Array) {
-					if (scheme) {
-						// Add own colors to the predifined scheme
-						Array.prototype.push.apply(scheme, colorFunctionResult);
+				// clone the original scheme
+				schemeClone = JSON.parse(JSON.stringify(scheme));
+
+				if (options.custom) {
+					// Execute own custom color function
+					var colorFunctionResult = options.custom(schemeClone);
+
+					// check if we really received a filled array; otherwise we keep and use the originally cloned scheme
+					if (colorFunctionResult instanceof Array && colorFunctionResult.length > 0) {
+						schemeClone = colorFunctionResult;
 					}
 				}
-			}
 
-			length = scheme.length;
+				length = schemeClone.length;
 
-			if (scheme) {
 				// Set scheme colors
 				chart.config.data.datasets.forEach(function(dataset, datasetIndex) {
 					colorIndex = datasetIndex % length;
-					color = scheme[options.reverse ? length - colorIndex - 1 : colorIndex];
+					color = schemeClone[options.reverse ? length - colorIndex - 1 : colorIndex];
 
 					// Object to store which color option is set
 					dataset.colorschemes = {};
@@ -76,7 +78,7 @@ export default {
 						if (typeof dataset.backgroundColor === 'undefined') {
 							dataset.backgroundColor = dataset.data.map(function(data, dataIndex) {
 								colorIndex = dataIndex % length;
-								return scheme[options.reverse ? length - colorIndex - 1 : colorIndex];
+								return schemeClone[options.reverse ? length - colorIndex - 1 : colorIndex];
 							});
 							dataset.colorschemes.backgroundColor = true;
 						}
