@@ -28,7 +28,7 @@ export default {
 			if (scheme) {
 
 				// clone the original scheme
-				schemeClone = JSON.parse(JSON.stringify(scheme));
+				schemeClone = scheme.slice();
 
 				if (options.custom) {
 					// Execute own custom color function
