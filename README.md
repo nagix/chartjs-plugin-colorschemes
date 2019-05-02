@@ -77,7 +77,7 @@ All available options are listed below.
 | `fillAlpha` | `Number` | `0.5` | The transparency value for the line fill color. Must be a number between `0.0` (fully transparent) and `1.0` (no transparency).
 | `scheme` | `String` | `'brewer.Paired12'` | Color scheme name that is any of [Color Chart](https://nagix.github.io/chartjs-plugin-colorschemes/colorchart.html).
 | `reverse` | `Boolean` | `false` | If set to `true`, the order of the colors in the selected  scheme is reversed.
-| `custom` | `Function` | undefined | A function that takes a copy of `scheme` in order to extend the predefined scheme colors (see example below).
+| `custom` | `Function` | undefined | A function that takes a copy of `scheme` in order to extend the predefined scheme colors. [more...](#custom-function).
 
 ### `custom`-Function
 
@@ -93,7 +93,7 @@ var customColorFunction = function (schemeColors) {
     return schemeColors;
 };
 
-...
+// ...
     options: {
     	plugins: {
             colorschemes: {
@@ -102,7 +102,7 @@ var customColorFunction = function (schemeColors) {
             }
         }
     }
-...
+//...
 
 ```
 
