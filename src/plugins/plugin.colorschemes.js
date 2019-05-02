@@ -30,14 +30,12 @@ export default {
 				// clone the original scheme
 				schemeClone = scheme.slice();
 
-				if (options.custom) {
-					// Execute own custom color function
-					var colorFunctionResult = options.custom(schemeClone);
+				// Execute own custom color function
+				var colorFunctionResult = helpers.callback(options.custom, [schemeClone]);
 
-					// check if we really received a filled array; otherwise we keep and use the originally cloned scheme
-					if (colorFunctionResult instanceof Array && colorFunctionResult.length > 0) {
-						schemeClone = colorFunctionResult;
-					}
+				// check if we really received a filled array; otherwise we keep and use the originally cloned scheme
+				if (colorFunctionResult instanceof Array && colorFunctionResult.length > 0) {
+					schemeClone = colorFunctionResult;
 				}
 
 				length = schemeClone.length;
