@@ -34,7 +34,7 @@ export default {
 				var colorFunctionResult = helpers.callback(options.custom, [schemeClone]);
 
 				// check if we really received a filled array; otherwise we keep and use the originally cloned scheme
-				if (colorFunctionResult instanceof Array && colorFunctionResult.length > 0) {
+				if (helpers.isArray(colorFunctionResult) && colorFunctionResult.length > 0) {
 					schemeClone = colorFunctionResult;
 				}
 
