@@ -1,32 +1,19 @@
 {
   "name": "chartjs-plugin-colorschemes",
-  "version": "0.3.0",
+  "homepage": "https://nagix.github.io/chartjs-plugin-colorschemes",
   "description": "Predefined color schemes for Chart.js",
+  "author": "Akihiko Kusanagi <nagi@nagi-p.com> (https://nagix.github.io/)",
+  "version": "0.3.0",
+  "license": "MIT",
+  "jsdelivr": "dist/chartjs-plugin-colorschemes.min.js",
+  "unpkg": "dist/chartjs-plugin-colorschemes.min.js",
   "main": "dist/chartjs-plugin-colorschemes.js",
-  "directories": {
-    "doc": "docs",
-    "test": "test"
-  },
-  "dependencies": {
-    "chart.js": "^2.5.0"
-  },
-  "devDependencies": {
-    "eslint-config-chartjs": "^0.1.0",
-    "gulp": "^4.0.0",
-    "gulp-eslint": "^5.0.0",
-    "gulp-file": "^0.4.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-replace": "^1.0.0",
-    "gulp-streamify": "^1.0.2",
-    "gulp-uglify": "^3.0.0",
-    "gulp-zip": "^4.2.0",
-    "merge2": "^1.2.3",
-    "rollup-stream": "^1.24.1",
-    "vinyl-source-stream": "^2.0.0"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nagix/chartjs-plugin-colorschemes.git"
+    "url": "https://github.com/nagix/chartjs-plugin-colorschemes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nagix/chartjs-plugin-colorschemes/issues"
   },
   "keywords": [
     "chart.js",
@@ -38,12 +25,32 @@
     "office",
     "tableau"
   ],
-  "author": "Akihiko Kusanagi <nagi@nagi-p.com> (https://nagix.github.io/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/nagix/chartjs-plugin-colorschemes/issues"
+  "files": [
+    "bower.json",
+    "dist/*.js",
+    "src/"
+  ],
+  "directories": {
+    "doc": "docs",
+    "test": "test"
   },
-  "homepage": "https://nagix.github.io/chartjs-plugin-colorschemes",
-  "jsdelivr": "dist/chartjs-plugin-colorschemes.min.js",
-  "unpkg": "dist/chartjs-plugin-colorschemes.min.js"
+  "devDependencies": {
+    "chart.js": "~2.8.0",
+    "eslint-config-chartjs": "^0.1.0",
+    "eslint-plugin-es": "^1.4.0",
+    "eslint-plugin-html": "^5.0.3",
+    "gulp": "^4.0.0",
+    "gulp-eslint": "^5.0.0",
+    "gulp-file": "^0.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-streamify": "^1.0.2",
+    "gulp-zip": "^4.2.0",
+    "merge2": "^1.2.3",
+    "rollup": "^1.11.2",
+    "rollup-plugin-terser": "^4.0.4",
+    "yargs": "^13.2.2"
+  },
+  "peerDependencies": {
+    "chart.js": ">= 2.5.0 < 3"
+  }
 }

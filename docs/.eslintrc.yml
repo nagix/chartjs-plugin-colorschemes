@@ -1,0 +1,19 @@
+plugins: [es, html]
+
+extends: [
+  plugin:es/no-2018,
+  plugin:es/no-2017,
+  plugin:es/no-2016,
+  plugin:es/no-2015
+]
+
+globals:
+  Chart: true
+  XLSX: true
+  ChartDataSource: true
+
+parserOptions:
+  sourceType: script
+
+rules:
+  no-unused-vars: 0
