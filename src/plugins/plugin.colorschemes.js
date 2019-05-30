@@ -98,6 +98,7 @@ var ColorSchemesPlugin = {
 				// For doughnut and pie chart, backgroundColor is set to an array of colors
 				case 'doughnut':
 				case 'pie':
+				case 'polarArea':
 					if (typeof dataset.backgroundColor === 'undefined' || override) {
 						dataset[EXPANDO_KEY].backgroundColor = dataset.backgroundColor;
 						dataset.backgroundColor = dataset.data.map(function(data, dataIndex) {
