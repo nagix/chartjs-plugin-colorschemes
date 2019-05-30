@@ -48,27 +48,27 @@ var ColorSchemesPlugin = {
 		var fillAlpha = options.fillAlpha;
 		var reverse = options.reverse;
 		var override = options.override;
-		var schemeClone, length, colorIndex, color;
+		var custom = options.custom;
+		var customResult, length, colorIndex, color;
 
 		if (scheme) {
 
-			// clone the original scheme
-			schemeClone = scheme.slice();
+			if (typeof custom === 'function') {
+				// Execute own custom color function
+				customResult = custom(scheme.slice());
 
-			// Execute own custom color function
-			var colorFunctionResult = helpers.callCallback(options.custom, [schemeClone]);
-
-			// check if we really received a filled array; otherwise we keep and use the originally cloned scheme
-			if (helpers.isArray(colorFunctionResult) && colorFunctionResult.length > 0) {
-				schemeClone = colorFunctionResult;
+				// check if we really received a filled array; otherwise we keep and use the original scheme
+				if (helpers.isArray(customResult) && customResult.length) {
+					scheme = customResult;
+				}
 			}
 
-			length = schemeClone.length;
+			length = scheme.length;
 
 			// Set scheme colors
 			chart.config.data.datasets.forEach(function(dataset, datasetIndex) {
 				colorIndex = datasetIndex % length;
-				color = schemeClone[reverse ? length - colorIndex - 1 : colorIndex];
+				color = scheme[reverse ? length - colorIndex - 1 : colorIndex];
 
 				// Object to store which color option is set
 				dataset[EXPANDO_KEY] = {};
@@ -103,7 +103,7 @@ var ColorSchemesPlugin = {
 						dataset[EXPANDO_KEY].backgroundColor = dataset.backgroundColor;
 						dataset.backgroundColor = dataset.data.map(function(data, dataIndex) {
 							colorIndex = dataIndex % length;
-							return schemeClone[reverse ? length - colorIndex - 1 : colorIndex];
+							return scheme[reverse ? length - colorIndex - 1 : colorIndex];
 						});
 					}
 					break;
