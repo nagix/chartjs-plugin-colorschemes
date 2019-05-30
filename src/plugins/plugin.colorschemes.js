@@ -56,7 +56,7 @@ var ColorSchemesPlugin = {
 			schemeClone = scheme.slice();
 
 			// Execute own custom color function
-			var colorFunctionResult = helpers.callback(options.custom, [schemeClone]);
+			var colorFunctionResult = helpers.callCallback(options.custom, [schemeClone]);
 
 			// check if we really received a filled array; otherwise we keep and use the originally cloned scheme
 			if (helpers.isArray(colorFunctionResult) && colorFunctionResult.length > 0) {
