@@ -49,17 +49,22 @@ var ColorSchemesPlugin = {
 		var reverse = options.reverse;
 		var override = options.override;
 		var custom = options.custom;
-		var customResult, length, colorIndex, color;
+		var schemeClone, customResult, length, colorIndex, color;
 
 		if (scheme) {
 
 			if (typeof custom === 'function') {
+				// clone the original scheme
+				schemeClone = scheme.slice();
+
 				// Execute own custom color function
-				customResult = custom(scheme.slice());
+				customResult = custom(schemeClone);
 
 				// check if we really received a filled array; otherwise we keep and use the original scheme
 				if (helpers.isArray(customResult) && customResult.length) {
 					scheme = customResult;
+				} else if (helpers.isArray(schemeClone) && schemeClone.length) {
+					scheme = schemeClone;
 				}
 			}
 
