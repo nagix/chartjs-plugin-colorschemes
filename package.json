@@ -3,7 +3,7 @@
   "homepage": "https://nagix.github.io/chartjs-plugin-colorschemes",
   "description": "Predefined color schemes for Chart.js",
   "author": "Akihiko Kusanagi <nagi@nagi-p.com> (https://nagix.github.io/)",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "MIT",
   "jsdelivr": "dist/chartjs-plugin-colorschemes.min.js",
   "unpkg": "dist/chartjs-plugin-colorschemes.min.js",
