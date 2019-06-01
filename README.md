@@ -1,6 +1,6 @@
 # chartjs-plugin-colorschemes
 
-[![npm](https://img.shields.io/npm/v/chartjs-plugin-colorschemes.svg?style=flat-square)](https://npmjs.com/package/chartjs-plugin-colorschemes) [![Bower](https://img.shields.io/bower/v/chartjs-plugin-colorschemes.svg?style=flat-square)](https://libraries.io/bower/chartjs-plugin-colorschemes) [![Travis](https://img.shields.io/travis/nagix/chartjs-plugin-colorschemes/master.svg?style=flat-square)](https://travis-ci.org/nagix/chartjs-plugin-colorschemes) [![Code Climate](https://img.shields.io/codeclimate/maintainability/nagix/chartjs-plugin-colorschemes.svg?style=flat-square)](https://codeclimate.com/github/nagix/chartjs-plugin-colorschemes) [![Awesome](https://awesome.re/badge-flat2.svg)](https://github.com/chartjs/awesome)
+[![npm](https://img.shields.io/npm/v/chartjs-plugin-colorschemes.svg?style=flat-square)](https://npmjs.com/package/chartjs-plugin-colorschemes) [![Bower](https://img.shields.io/bower/v/chartjs-plugin-colorschemes.svg?style=flat-square)](https://libraries.io/bower/chartjs-plugin-colorschemes) [![Travis](https://img.shields.io/travis/nagix/chartjs-plugin-colorschemes/master.svg?style=flat-square)](https://travis-ci.org/nagix/chartjs-plugin-colorschemes) [![Coverage](https://img.shields.io/codeclimate/coverage/nagix/chartjs-plugin-colorschemes.svg?style=flat-square)](https://codeclimate.com/github/nagix/chartjs-plugin-colorschemes)  [![Maintainability](https://img.shields.io/codeclimate/maintainability/nagix/chartjs-plugin-colorschemes.svg?style=flat-square)](https://codeclimate.com/github/nagix/chartjs-plugin-colorschemes) [![Awesome](https://awesome.re/badge-flat2.svg)](https://github.com/chartjs/awesome)
 
 *Predefined color schemes for [Chart.js](https://www.chartjs.org)*
 
@@ -144,6 +144,9 @@ The following commands will then be available from the repository root:
 ```bash
 gulp build            # build dist files
 gulp build --watch    # build and watch for changes
+gulp test             # run all tests
+gulp test --watch     # run all tests and watch for changes
+gulp test --coverage  # run all tests and generate code coverage
 gulp lint             # perform code linting
 gulp package          # create an archive with dist files and samples
 ```

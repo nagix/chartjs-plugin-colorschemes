@@ -1,8 +1,9 @@
-/dist
-/node_modules
-/package-lock.json
 .DS_Store
-.idea
 .vscode
 bower.json
+cc-test-reporter
+coverage/
+dist/
+node_modules/
+package-lock.json
 *.swp
