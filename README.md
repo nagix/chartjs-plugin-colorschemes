@@ -131,6 +131,25 @@ var customColorFunction = function(schemeColors) {
 
 ```
 
+### `custom` colorscheme from scratch
+
+It is possible to build your custom colorscheme from scratch (without using the `custom` function) by simply defining the colors it contains. See example below.
+
+```js
+var myColors = ['red', 'green', 'blue', 'orange', 'black', 'yellow'];
+
+// ...
+    options: {
+        plugins: {
+            colorschemes: {
+                scheme: myColors
+            }
+        }
+    }
+//...
+
+```
+
 ## Building
 
 You first need to install node dependencies (requires [Node.js](https://nodejs.org/)):
