@@ -11,7 +11,7 @@ var EXPANDO_KEY = '$colorschemes';
 
 // pluginBase snippet fixes the chartjs 3 incompatibility, and is backwards-compatible
 // by Github user gebrits (https://github.com/gebrits/chartjs-plugin-colorschemes)
-// 
+//
 // Chartjs 2 => Chart.defaults.global
 // Chartjs 3 => Chart.defaults
 const pluginBase = Chart.defaults.global || Chart.defaults;
@@ -52,8 +52,10 @@ var ColorSchemesPlugin = {
 	beforeUpdate: function(chart, args, options) {
 		// Please note that in v3, the args argument was added. It was not used before it was added,
 		// so we just check if it is not actually our options object
-		if (options === undefined) options = args
-		
+		if (options === undefined) {
+			options = args;
+		}
+
 		var scheme = getScheme(options.scheme);
 		var fillAlpha = options.fillAlpha;
 		var reverse = options.reverse;
