@@ -124,6 +124,17 @@ var ColorSchemesPlugin = {
 						});
 					}
 					break;
+				// For bar chart backgroundColor (including fillAlpha) and borderColor are set
+				case 'bar':
+					if (typeof dataset.backgroundColor === 'undefined' || override) {
+						dataset[EXPANDO_KEY].backgroundColor = dataset.backgroundColor;
+						dataset.backgroundColor = helpers.color(color).alpha(fillAlpha).rgbString();
+					}
+					if (typeof dataset.borderColor === 'undefined' || override) {
+						dataset[EXPANDO_KEY].borderColor = dataset.borderColor;
+						dataset.borderColor = color;
+					}
+					break;
 				// For the other chart, only backgroundColor is set
 				default:
 					if (typeof dataset.backgroundColor === 'undefined' || override) {

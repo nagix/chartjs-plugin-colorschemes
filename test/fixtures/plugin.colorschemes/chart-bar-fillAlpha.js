@@ -1,3 +1,4 @@
+// https://github.com/nagix/chartjs-plugin-colorschemes/issues/12
 export default {
 	config: {
 		type: 'bar',
@@ -24,7 +25,7 @@ export default {
 			plugins: {
 				colorschemes: {
 					scheme: 'brewer.Accent3',
-					fillAlpha: 1
+					fillAlpha: 0.2
 				}
 			}
 		}
