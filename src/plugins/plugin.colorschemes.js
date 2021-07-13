@@ -181,6 +181,8 @@ var ColorSchemesPlugin = {
 	}
 };
 
-Chart.plugins.register(ColorSchemesPlugin);
+// Chart.js v3 uses "Chart.register", while v2 uses "Chart.plugins.register"
+const registerPlugin = Chart.register || Chart.plugins.register;
+registerPlugin(ColorSchemesPlugin);
 
 export default ColorSchemesPlugin;
