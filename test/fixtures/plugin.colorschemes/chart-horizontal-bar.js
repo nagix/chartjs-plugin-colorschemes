@@ -1,6 +1,6 @@
 export default {
 	config: {
-		type: 'horizontalBar',
+		type: 'bar',
 		data: {
 			labels: [0, 1, 2, 3, 4, 5],
 			datasets: [{
@@ -12,16 +12,17 @@ export default {
 			}]
 		},
 		options: {
-			legend: false,
-			title: false,
+			indexAxis: 'y',
 			layout: {
 				padding: 4
 			},
 			scales: {
-				xAxes: [{display: false}],
-				yAxes: [{display: false}]
+				x: {display: false},
+				y: {display: false}
 			},
 			plugins: {
+				legend: false,
+				title: false,
 				colorschemes: {
 					scheme: 'brewer.Accent3'
 				}

@@ -35,8 +35,8 @@
     "test": "test"
   },
   "devDependencies": {
-    "chart.js": "~2.8.0",
-    "eslint-config-chartjs": "^0.1.0",
+    "chart.js": "~3.7.1",
+    "eslint-config-chartjs": "^0.3.0",
     "eslint-plugin-es": "^1.4.0",
     "eslint-plugin-html": "^5.0.3",
     "gulp": "^4.0.0",
@@ -63,6 +63,6 @@
     "yargs": "^13.2.2"
   },
   "peerDependencies": {
-    "chart.js": ">= 2.5.0 < 3"
+    "chart.js": ">= 3 < 4"
   }
 }

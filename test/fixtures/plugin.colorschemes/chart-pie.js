@@ -12,9 +12,9 @@ export default {
 			}]
 		},
 		options: {
-			legend: false,
-			title: false,
 			plugins: {
+				legend: false,
+				title: false,
 				colorschemes: {
 					scheme: 'brewer.Accent6'
 				}
