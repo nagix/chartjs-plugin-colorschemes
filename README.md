@@ -97,7 +97,7 @@ All available options are listed below.
 | `fillAlpha` | `number` | `0.5` | The transparency value for the line fill color. Must be a number between `0.0` (fully transparent) and `1.0` (no transparency).
 | `scheme` | <code>string&#124;string[]</code> | `'brewer.Paired12'` | Color scheme name that is any of [Color Chart](https://nagix.github.io/chartjs-plugin-colorschemes/colorchart.html). It also accepts an array of color strings, which is primarily for ES modules. [more...](#usage-in-es6-as-module)
 | `reverse` | `boolean` | `false` | If set to `true`, the order of the colors in the selected  scheme is reversed.
-| `override` | `boolean` | `false` | If set to `true`, the specified color scheme will override the existing color options. If `false`, it is only applied when no color setting exists. [more...](#overriding-existing-color-settings)
+| `overrideExisting` | `boolean` | `false` | If set to `true`, the specified color scheme will override the existing color options. If `false`, it is only applied when no color setting exists. [more...](#overriding-existing-color-settings)
 | `custom` | `function` | `undefined` | A function that takes a copy of the color string array for `scheme` in order to extend the predefined scheme colors. [more...](#custom-function)
 
 ### Overriding Existing Color Settings

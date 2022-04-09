@@ -19,7 +19,7 @@ pluginBase.plugins.colorschemes = {
 	scheme: 'brewer.Paired12',
 	fillAlpha: 0.5,
 	reverse: false,
-	override: false
+	overrideExisting: false
 };
 
 function getScheme(scheme) {
@@ -59,7 +59,7 @@ var ColorSchemesPlugin = {
 		var scheme = getScheme(options.scheme);
 		var fillAlpha = options.fillAlpha;
 		var reverse = options.reverse;
-		var override = options.override;
+		var override = options.overrideExisting;
 		var custom = options.custom;
 		var schemeClone, customResult, length, colorIndex, color;
 
@@ -181,6 +181,7 @@ var ColorSchemesPlugin = {
 	}
 };
 
-Chart.plugins.register(ColorSchemesPlugin);
+const registerPlugin = Chart.register || Chart.plugins.register;
+registerPlugin(ColorSchemesPlugin);
 
 export default ColorSchemesPlugin;
