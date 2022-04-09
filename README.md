@@ -102,7 +102,7 @@ All available options are listed below.
 
 ### Overriding Existing Color Settings
 
-By default, this plugin doesn't apply a color scheme if any color options are already specified. This may cause a problem if you are using a third party library such as [ng-charts](https://valor-software.com/ng2-charts/), which automatically applies default color settings. In that case, the existing color settings can be overridden by setting the `override` option to `true`.
+By default, this plugin doesn't apply a color scheme if any color options are already specified. This may cause a problem if you are using a third party library such as [ng-charts](https://valor-software.com/ng2-charts/), which automatically applies default color settings. In that case, the existing color settings can be overridden by setting the `overrideExisting` option to `true`.
 
 ### `custom`-Function
 
