@@ -1,17 +1,4 @@
-﻿
-Conversation opened. 1 unread message.
-
-Skip to content
-Using Gmail with screen readers
-1 of 24, 775
-chartjs color scheme
-Inbox
-
-Zhicheng Su
-1: 11 PM(3 minutes ago)
-to me
-
-    /*!
+﻿   /*!
      * chartjs-plugin-colorschemes v0.4.0
      * https://nagix.github.io/chartjs-plugin-colorschemes
      * (c) 2019 Akihiko Kusanagi
