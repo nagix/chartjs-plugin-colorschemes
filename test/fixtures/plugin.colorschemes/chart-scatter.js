@@ -32,16 +32,16 @@ export default {
 			}]
 		},
 		options: {
-			legend: false,
-			title: false,
 			layout: {
 				padding: 4
 			},
 			scales: {
-				xAxes: [{display: false}],
-				yAxes: [{display: false}]
+				xAxes: {display: false},
+				yAxes: {display: false}
 			},
 			plugins: {
+				legend: false,
+				title: false,
 				colorschemes: {
 					scheme: 'brewer.Accent3'
 				}

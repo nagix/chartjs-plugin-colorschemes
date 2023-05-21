@@ -97,12 +97,12 @@ All available options are listed below.
 | `fillAlpha` | `number` | `0.5` | The transparency value for the line fill color. Must be a number between `0.0` (fully transparent) and `1.0` (no transparency).
 | `scheme` | <code>string&#124;string[]</code> | `'brewer.Paired12'` | Color scheme name that is any of [Color Chart](https://nagix.github.io/chartjs-plugin-colorschemes/colorchart.html). It also accepts an array of color strings, which is primarily for ES modules. [more...](#usage-in-es6-as-module)
 | `reverse` | `boolean` | `false` | If set to `true`, the order of the colors in the selected  scheme is reversed.
-| `override` | `boolean` | `false` | If set to `true`, the specified color scheme will override the existing color options. If `false`, it is only applied when no color setting exists. [more...](#overriding-existing-color-settings)
+| `overrideExisting` | `boolean` | `false` | If set to `true`, the specified color scheme will override the existing color options. If `false`, it is only applied when no color setting exists. [more...](#overriding-existing-color-settings)
 | `custom` | `function` | `undefined` | A function that takes a copy of the color string array for `scheme` in order to extend the predefined scheme colors. [more...](#custom-function)
 
 ### Overriding Existing Color Settings
 
-By default, this plugin doesn't apply a color scheme if any color options are already specified. This may cause a problem if you are using a third party library such as [ng-charts](https://valor-software.com/ng2-charts/), which automatically applies default color settings. In that case, the existing color settings can be overridden by setting the `override` option to `true`.
+By default, this plugin doesn't apply a color scheme if any color options are already specified. This may cause a problem if you are using a third party library such as [ng-charts](https://valor-software.com/ng2-charts/), which automatically applies default color settings. In that case, the existing color settings can be overridden by setting the `overrideExisting` option to `true`.
 
 ### `custom`-Function
 

@@ -8,12 +8,12 @@ export default {
 			}]
 		},
 		options: {
-			legend: false,
-			title: false,
 			scale: {
 				display: false
 			},
 			plugins: {
+				legend: false,
+				title: false,
 				colorschemes: {
 					scheme: 'brewer.Accent6'
 				}
